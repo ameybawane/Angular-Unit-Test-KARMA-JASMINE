@@ -1,0 +1,63 @@
+.line {
+    color: white;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active {
+    background-color: white;
+    color: black;
+    transition: all;
+    display: block;
+}
+
+.nav-link {
+    color: white;
+}
+
+.col-auto {
+    height: 2000px;
+}
+
+::ng-deep .p-panelmenu .p-panelmenu-header > a {
+    background-color: #00818A;
+    color: white;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: Arial;   
+}
+
+::ng-deep .p-panelmenu .p-panelmenu-content {
+    background-color: #F8F9FA;
+}
+
+span {
+    color: white;
+    font-weight: 700;
+    font-family: Arial;
+    font-size: 24px;   
+}
+
+.sideBar{
+   background-color: #00818A; 
+}
+
+.btn{
+    background-color: #a4cbcc;
+    margin: 20px 20px;
+}
+
+::ng-deep .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link .p-menuitem-text {
+    color: black;
+}
+
+::ng-deep .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:not(.p-disabled):hover {
+    background: #D62598;
+    color: white!important;
+}
+
+::ng-deep .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
+    color: white;
+}

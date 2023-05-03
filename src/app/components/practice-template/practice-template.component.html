@@ -1,0 +1,269 @@
+<div class="p-d-flex p-jc-center p-ai-center mainDiv">
+    <div class="subLabels">
+        <div class="row practiceNameDiv">
+            <div class="col-md-3 backDiv">
+                <button pButton class="back" [routerLink]="['/practiceCategory']" icon="pi pi-angle-left" iconPos="left"
+                    pTooltip="Go Back">
+                </button>
+            </div>
+            <div class="col-md-3" style="width: fit-content;">
+                <label style="font-weight:500;font-size: 17px;">
+                    Sub Practice :
+                </label>
+            </div>
+            <div class="col-md-6" *ngIf="practiceDetails">
+                <label style="margin-left:-14px;font-size: 18px;">
+                    {{practiceDetails.practiceName}}
+                </label>
+            </div>
+        </div>
+        <div class="row categoryNameDiv">
+            <div class="col-md-3" style="width: fit-content;font-size: 17px;">
+                <label style="font-weight:500;">
+                    Category Name:
+                </label>
+            </div>
+            <div class="col-md-9" *ngIf="practiceCategoryDetails">
+                <label style="margin-left:-14px;font-size: 17px;">
+                    {{practiceCategoryDetails.categoryName}}
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row searchDiv">
+        <div class="col-md-4 p-input-icon-left p-ml-auto searchbar">
+            <i class="pi pi-search searchIcon"></i>
+            <input type="text" class="searchbox" pInputText
+                (input)="dt1.filterGlobal($any($event.target).value, 'contains')" placeholder="Search here" />
+            &nbsp;
+        </div>
+        <div class="col-md-8 showInActive">
+            <div>
+                <p-checkbox [binary]="true" inputId="binary" (onChange)="showAllRecords($event)"></p-checkbox>
+                <label class="inActiveLabel">Show All Records</label>
+            </div>
+        </div>
+    </div>
+    <div id="templateGrid">
+        <p-table #dt1 [value]="practiceTemplateList" dataKey="id" [rows]="10" [showCurrentPageReport]="true"
+            [rowsPerPageOptions]="[5,10,15,20]" styleClass="p-datatable-striped" [paginator]="true"
+            [showFirstLastIcon]="false" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+            [globalFilterFields]="['question','weightage']" [tableStyle]="{'max-width': '1120px','min-width': '1120px'}" [rowHover]="true"
+            [resizableColumns]="true" [alwaysShowPaginator]="false">
+
+            <!--Datatable-->
+            <ng-template pTemplate="header">
+                <tr>
+                    <th style="min-width:60%;white-space: normal;overflow: hidden;text-overflow: ellipsis;">Expectations</th>
+                    <th style="max-width:10%">Weightage</th>
+                    <th style="max-width:10%">Active</th>
+                    <th style="max-width:10%">Edit</th>
+                    <th style="max-width:10%">Delete</th>
+                </tr>
+            </ng-template>
+            <!--Interpolation-->
+            <ng-template pTemplate="body" let-practiceTemplateList>
+                <tr>
+                    <td style="max-width:60%"><label style="font-weight: normal;"
+                            pTooltip="{{practiceTemplateList.additionalInfo}}">{{practiceTemplateList.question}}</label>
+                    </td>
+                    <td style="max-width:10%">{{practiceTemplateList.weightage}}</td>
+                    <td style="max-width:10%"><p-checkbox [(ngModel)]="practiceTemplateList.isActive" [disabled]="true" [binary]="true"
+                            inputId="binary">
+                        </p-checkbox></td>
+                    <td class="columnwidth" style="max-width:10%">
+                        <i (click)="edit(practiceTemplateList.practiceTemplateId)" class="pi pi-pencil"></i>
+                    </td>
+                    <td class="columnwidth" style="max-width:10%">
+                        <button [disabled]="practiceTemplateList.isActive==false" class="gridDeleteBtn">
+                            <i *ngIf="practiceTemplateList.isActive==true"
+                                (click)="confirm($event,practiceTemplateList.practiceTemplateId)"
+                                class="pi pi-trash"></i>
+                            <i *ngIf="practiceTemplateList.isActive==false" class="pi pi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            </ng-template>
+
+            <ng-template pTemplate="emptymessage">
+                <tr>
+                    <td colspan="7">No records found.</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+
+    <div class="card" style="width: 50%; max-width: 800px; border-color: teal;" *ngIf="!this.showEditForm">
+        <h5 class="addCardHeader card-header p-3 mb-0">Expectations</h5>
+        <div class="card-body p-3">
+            <form [formGroup]="practiceTemplateForm" (ngSubmit)="savePracticeTemplateForm(practiceTemplateForm.value)">
+
+                <div formArrayName="practiceTemplate">
+                    <div *ngFor="let practiceTemplate of practiceTemplateForms.controls; let i = index"
+                        class="row mb-3">
+                        <div [formGroupName]="i">
+                            <div class="row">
+                                <div class="col-md-12 question">
+                                    <label for="question" class="form-label">Expectations</label>
+                                    <input type="text" class="form-control expectationsInput" formControlName="question"
+                                        placeholder="Enter Expectations ">
+                                    <div *ngIf="practiceTemplateForm.get('practiceTemplate.' + i + '.question')?.touched &&
+                                    practiceTemplateForm.get('practiceTemplate.' + i + '.question')?.invalid"
+                                        class="text-danger">Please Enter Expectations
+                                    </div>
+                                    <div *ngIf="practiceTemplateForm.get('practiceTemplate.' + i + '.question')?.errors?.['maxLength']"
+                                        class="text-danger">Expectations cannot contain more than 500 characters</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="additionalInfo" class="form-label">Additional Info</label>
+                                    <textarea pInputTextarea class="form-control" formControlName="additionalInfo"
+                                        placeholder="Enter Additional Info"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="weightage" class="form-label">Weightage</label>
+                                    <input type="number" class="form-control weightageInput" formControlName="weightage"
+                                        placeholder="Enter Weightage "
+                                        onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" />
+
+                                    <div *ngIf="practiceTemplateForm.get('practiceTemplate.' + i + '.weightage')?.invalid 
+                                        && practiceTemplateForm.get('practiceTemplate.' + i + '.weightage')?.dirty
+                                        || practiceTemplateForm.get('practiceTemplate.' + i + '.weightage')?.touched"
+                                        class="text-danger">
+                                        <div *ngIf="practiceTemplateForm.get('practiceTemplate.' + i + '.weightage')?.errors?.['required']"
+                                            class="text-danger">Please Enter Weightage</div>
+                                        <div *ngIf="practiceTemplateForm.get('practiceTemplate.' + i + '.weightage')?.errors?.['max']"
+                                            class="text-danger">
+                                            Invalid Weightage
+                                        </div>
+                                        <div *ngIf="practiceTemplateForm.get('practiceTemplate.' + i + '.weightage')?.errors?.['min']"
+                                            class="text-danger">
+                                            Cannot enter negative number
+                                        </div>
+                                        <div *ngIf="practiceTemplateForm.get('practiceTemplate.' + i + '.weightage')?.errors?.['pattern']"
+                                            class="text-danger">
+                                            Cannot enter decimal number
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3 isActiveDiv">
+                                    <label for="isActive" class="form-label">Active</label><br>
+                                    <div class="checkBox-field">
+                                        <p-checkbox formControlName="isActive" [binary]="true" inputId="binary"
+                                            (onChange)="checkEvent($event, i)"></p-checkbox>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 deleteDiv">
+                                    <button type="button" class="btn btn-danger btn-delete"
+                                        (click)="removePracticeTemplate(i)"
+                                        *ngIf="practiceTemplateForms.controls.length > 1">Delete
+                                    </button>
+                                </div>
+                                <div class="col-md-2 resetDiv">
+                                    <button type="button" class="btn btn-secondary btn-reset"
+                                        (click)="resetPracticeTemplateForm(i)">Reset
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 addDiv">
+                                <button type="button" class="btn btn-info btn-add" (click)="addPracticeTemplate(i)"
+                                    *ngIf="i >= practiceTemplateForms.length - 1" pTooltip="Add more Child Quetions"
+                                    [disabled]="!practiceTemplateForm.valid || practiceTemplateForms.controls.length - 1 > rowLimit">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" class="totalWeightage">
+                            <div id="totalWeightage"
+                                [ngClass]="{'red': getTotalWeightage() > 100, 'yellow': getTotalWeightage() < 100, 'green': getTotalWeightage() === 100}">
+                                <div class="icon"> Total weightage: {{getTotalWeightage()}}/100</div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="col-md-6 saveDiv">
+                            <button type="submit" class="btn btn-primary btn-save"
+                                [disabled]="!practiceTemplateForm.valid || !isWeightageValid()">
+                                Save</button>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <p-toast></p-toast>
+
+    <p-confirmPopup></p-confirmPopup>
+    <div class="p-d-flex p-jc-center p-ai-center editMainDiv" *ngIf="this.showEditForm">
+        <div class="editCard card">
+            <h5 class="editCardHeader card-header p-3 mb-0">Edit Expectations
+            </h5>
+            <div class="card-body p-3">
+                <form [formGroup]="editPracticeTemplateForm">
+                    <div class="row">
+                        <div class="col-md-12 question">
+                            <label for="question" class="form-label">Expectations
+                            </label>
+                            <input type="text" class="form-control expectationsInput" formControlName="question">
+                            <div *ngIf="editPracticeTemplateForm.get('question')?.touched && editPracticeTemplateForm.get('question')?.invalid"
+                                class="text-danger">Please Enter Expectations
+                            </div>
+                            <div *ngIf="practiceTemplateForm.get('question')?.errors?.['maxLength']" class="text-danger">
+                                Expectations cannot contain more than 500 characters</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="additionalInfo" class="form-label">Additional Info</label>
+                                <textarea pInputTextarea class="form-control" formControlName="additionalInfo"
+                                    placeholder="Enter Additional Info">
+                                </textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="weightage" class="form-label">Weightage</label>
+                                <input type="number" class="form-control weightageInput" formControlName="weightage"
+                                    onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+                                <div *ngIf="editPracticeTemplateForm.get('weightage')?.errors?.['required'] && editPracticeTemplateForm.get('weightage')?.touched && editPracticeTemplateForm.get('weightage')?.invalid"
+                                    class="text-danger">Please Enter Weightage
+                                </div>
+                                <div *ngIf="editPracticeTemplateForm.get('weightage')?.errors?.['max']"
+                                    class="text-danger">Invalid Weightage
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <label for="isActive" class="form-label">Active</label><br>
+                                <div class="e-checkBox-field">
+                                    <p-checkbox formControlName="isActive" [binary]="true" inputId="binary">
+                                    </p-checkbox>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row editBtns">
+                        <div class="col-md-6 cancelBtn">
+                            <button type="button" class="btn btn-secondary btn-cancel"
+                                (click)="cancel()">Cancel</button>
+                        </div>
+                        <div class="col-md-6 updateBtn">
+                            <button type="button" class="btn btn-primary btn-eSave"
+                                [disabled]="!editPracticeTemplateForm.valid"
+                                (click)="updateForm(editPracticeTemplateForm.value)">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

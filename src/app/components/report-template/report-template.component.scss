@@ -1,0 +1,237 @@
+//TABLE HEADER
+::ng-deep .p-datatable .p-datatable-thead>tr>th {
+    background-color: #C9E5E6;
+    width: 200px;
+    // text-align: center;
+}
+
+::ng-deep .p-datatable .p-datatable-tbody>tr>td {
+    padding: 0px;
+    width: 350px;
+    // text-align: center;
+
+}
+
+::ng-deep .p-datatable-header.ng-star-inserted {
+    background-color: white;
+    border-width: 0px;
+    border-color: white;
+}
+
+::ng-deep .p-datatable .p-datatable-tbody {
+    border-left: 2px solid teal;
+    border-right: 2px solid teal;
+    border-bottom: 2px solid teal;
+}
+
+::ng-deep .p-datatable .p-datatable-thead  {
+    border-left: 2px solid teal;
+    border-right: 2px solid teal;
+    border-top: 2px solid teal;
+    
+}
+
+//OVERALL MARGIN
+#project {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.expandaleTable {
+    position: relative;
+    left: 60px;
+}
+
+::ng-deep .expandAllBtn {
+    background-color: none;
+}
+
+::ng-deep .p-button.p-button-icon-only {
+    width: 3rem;
+    padding: 0.75rem 0;
+    color: black;
+}
+
+::ng-deep button:not(:disabled),
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled) :hover {
+    color: black;
+}
+
+::ng-deep button:not(:disabled),
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled) {
+    cursor: pointer;
+
+}
+
+.p-datatable-wrapper {
+    min-height: 100px;
+}
+
+::ng-deep .p-datatable .p-datatable-thead>tr>th {
+    padding: 0rem 1rem;
+}
+
+::ng-deep .p-datatable .p-datatable-thead>tr>th {
+    padding: 0rem 0rem;
+}
+
+::ng-deep .p-datatable .p-datatable-tbody>tr>td {
+    padding: 0px;
+    border: none;
+    width: 350px;
+}
+
+.parentHeading {
+    font-weight: bolder;
+}
+
+.asdasd {
+    font-weight: bolder;
+}
+
+.selected {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+.boldFont {
+    font-weight: bolder;
+}
+
+.normalFont {
+    font-weight: normal;
+}
+
+::ng-deep .p-datatable-resizable .p-datatable-thead>tr>th {
+    padding-block: unset;
+}
+
+::ng-deep .p-datatable-resizable .p-datatable-tbody>tr>td {
+    padding-block: unset;
+}
+
+::ng-deep.p-datatable table {
+    width: max-content;
+}
+::ng-deep .p-button.p-button-icon-only.p-button-rounded {
+    border-radius: 1%;
+    height: 1rem;
+}
+::ng-deep .p-button.p-button-icon-only.p-button-rounded :hover {
+    border-radius: none;
+}
+::ng-deep .p-button.p-button-icon-only {
+    width: 1rem;
+    padding: 0.75rem 0;
+    color: black;
+}
+::ng-deep .p-button {
+background-color: red;
+    display: flex;
+    border: 1px solid #13cf84;
+}
+::ng-deep .p-button:focus{
+
+  color: red;
+  border: 1px solid #13cf84;
+
+}
+::ng-deep .p-datatable .p-datatable-tbody > tr > td {
+    width: 294px;
+}
+// ::ng-deep .p-datatable .p-datatable-tbody tr:last-child td {
+//      border-bottom: 1px solid black;
+//    }
+
+.radioDiv{
+    margin-top: 10px;
+    margin-left: 60px;
+}
+
+.btnDiv {
+    margin-bottom: 10px;
+}
+
+.last-row {
+    border-bottom: none !important;
+}
+
+.radioLabel {
+    margin-left: 0px !important;
+    width: fit-content;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.radiobtns {
+    margin-left: 5px;
+    width: fit-content;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+::ng-deep div.p-radiobutton-box.p-highlight {
+    border-color: #D62598 !important;
+    background-color: #D62598 !important;
+}
+    
+::ng-deep div.p-radiobutton-box:not(.p-disabled):not(.p-highlight):hover {
+    border-color: #D62598 !important;
+}
+
+// ::ng-deep .p-datatable .p-datatable-tbody > tr.p-datatable-dragpoint-bottom >td{
+//     box-shadow: none !important;
+//     background-color: #D62598 !important;
+//     border: 1px solid black !important;
+ 
+// }
+
+// ::ng-deep tr.p-element.ng-star-inserted.highlight{
+//     //color: yellow;
+//     border: 1px solid black !important;
+//     background-color: none !important;
+    
+// }
+
+
+
+// ::ng-deep .p-datatable .p-datatable-tbody > tr.p-datatable-reorderablerow-handle{
+//     box-shadow: none !important;
+//     background-color: #D62598 !important;
+//     border: 1px solid black !important;
+// }
+
+
+
+// ::ng-deep .highlight{
+//     background-color: #D62598 !important;
+// }
+
+
+
+                                                            // loader
+                                                            
+::ng-deep .p-component-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90% !important;
+    height: 100%;
+}
+
+::ng-deep .p-component-overlay {
+    background-color: white;
+    opacity: 0.5;
+    transition-duration: 0.2s;
+}
+
+
+::ng-deep .pi-spinner:before {
+    content: "\e926";
+    color: #00818a;
+}
+

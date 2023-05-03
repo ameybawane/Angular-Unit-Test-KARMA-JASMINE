@@ -1,0 +1,23 @@
+<div class="page-tittle">
+    <p>Practice Report</p>
+</div>
+<div class="page-head-tittle">
+    <p>You are not logged in.</p>
+</div>
+<div class="loginPage">
+    <div class="errMssg">
+        {{formValidMeassage}}
+    </div>
+    <div class="formClass">
+        <form [formGroup]="LoginForm">
+            <div class="form-group mb-3">
+                <div class="input-field">
+                    <input type="text" class="form-control" style="text-align: center;" placeholder="Email"
+                        formControlName="Email"
+                        [ngClass]="{'is-invalid': (LoginForm.get('Email')?.touched || LoginForm.get('Email')?.dirty) && !LoginForm.get('Email')?.valid}">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-secondary loginbtn" (click)="logIn()">Login</button>
+        </form>
+    </div>
+</div>

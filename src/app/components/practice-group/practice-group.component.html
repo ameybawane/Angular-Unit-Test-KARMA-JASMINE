@@ -1,0 +1,110 @@
+<!--PRACTICE GROUP GRID STARTS HERE-->
+<div class="p-d-flex p-jc-center p-ai-center mainDiv">
+    <div id="project">
+        <!--Checkbox for All Records & Searchbar-->
+        <div class="row practiceHeader">
+            <div class="row searchDiv">
+                <div class="col-md-4 p-input-icon-left p-ml-auto searchbar">
+                    <i class="pi pi-search searchIcon"></i>
+                    <input type="text" class="searchbox" pInputText
+                        (input)="dt1.filterGlobal($any($event.target).value, 'contains')"
+                        placeholder="Search here" />&nbsp;
+                </div>
+                <div class="col-md-8 showInActive">
+                    <div>
+                        <p-checkbox name="allRecords" [binary]="true" inputId="binary"
+                            (onChange)="checkedEventActive($event)">
+                        </p-checkbox>
+                        <label class="inActiveLabel">Show All Records</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Pagination-->
+        <p-table #dt1 [value]="posts" [rows]="5" [showCurrentPageReport]="true" [rowsPerPageOptions]="[5,10,15,20]"
+            styleClass="p-datatable-striped" [paginator]="true" [showFirstLastIcon]="false"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+            [globalFilterFields]="['practiceGroupName','isActive']" [tableStyle]="{'min-width': '1000px'}"
+            [rowHover]="true" [resizableColumns]="true" [alwaysShowPaginator]="false">
+
+
+            <!--Datatable-->
+            <ng-template pTemplate="header">
+                <tr>
+                    <th style="min-width:70%">Practices</th>
+                    <th style="width:10%">Active</th>
+                    <th style="width:10%">Edit</th>
+                    <th style="width:10%">Delete</th>
+                </tr>
+            </ng-template>
+
+            <!--Interpolation-->
+            <ng-template pTemplate="body" let-posts>
+                <tr>
+                    <td style="min-width:70%" class="columnwidth">{{posts.practiceGroupName}}</td>
+                    <td style="width:10%">
+                        <p-checkbox [binary]="true" inputId="binary" [(ngModel)]="posts.isActive" [disabled]="true">
+                        </p-checkbox>
+                    </td>
+                    <td style="width:10%">
+                        <i (click)="updateRecord(posts.practiceGroupId)" class="pi pi-pencil"></i>
+                    </td>
+                    <td style="width:10%">
+                        <i (click)="deletePR(posts.practiceGroupId)" class="pi pi-trash"></i>
+                    </td>
+                </tr>
+            </ng-template>
+
+            <ng-template pTemplate="emptymessage">
+                <tr>
+                    <td colspan="7">No records found.</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+    <!--PRACTICE GROUP EDIT/DELETE GRID ENDS HERE-->
+
+
+    <!--PRATICE GROUP ADD FORM STARTS HERE-->
+    <div class="addCard card">
+        <h5 class="addCardHeader card-header p-3 mb-0">Practices</h5>
+        <div class="card-body p-3">
+            <form [formGroup]="addPracticeGroupForm" (ngSubmit)="addPracticeGroup()">
+                <div class="row">
+                    <div class="col-3 "> <label for="practiceGroupName" class="form-label space">Practice </label></div>
+                    <div class="col-6"> <input type="text" id="inputtext" pInputText placeholder="Enter Practice "
+                            class="txtwidth txtpadding" formControlName="practiceGroupName">
+                        <div class="text-danger txtwidth"
+                            *ngIf="addPracticeGroupForm.get('practiceGroupName')?.touched && addPracticeGroupForm.get('practiceGroupName')?.invalid">
+                            Please Enter Practice
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3 "> <label for="isActive" class="form-label">Active </label></div>
+                    <div class="col-1">
+                        <p-checkbox formControlName="isActive" [binary]="true" inputId="binary"
+                            (onChange)="checkedEvent($event)" class="txtwidth">
+                        </p-checkbox>
+                    </div>
+                    <div class="row">
+                        <div class="col-5 "></div>
+                        <div class="col-7">
+                            <small class="p-error block"
+                                *ngIf="addPracticeGroupForm.get('isActive')?.touched && addPracticeGroupForm.get('isActive')?.invalid">
+                                Please Enter Active
+                            </small>
+
+                        </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="col-md-2 saveDiv">
+                            <button type="submit" class="btn-save"
+                                [disabled]="!addPracticeGroupForm.valid "> Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>

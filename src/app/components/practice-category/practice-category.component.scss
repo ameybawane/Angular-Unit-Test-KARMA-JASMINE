@@ -1,0 +1,559 @@
+//SPACE BETWEEN FIELDS
+.space {
+    padding-bottom: 80px;
+}
+
+//TITLE
+.mainheading {
+    color: #00818A;
+    font-family: 'Noto Sans';
+    font-size: 22px;
+    margin-left: 600px;
+}
+
+h5 {
+    color: #00818A;
+    font-family: 'Noto Sans';
+    font-size: 22px;
+    padding-left: 350px;
+}
+
+.nameposition {
+    float: right;
+}
+
+.boldtext {
+    font-weight: bold;
+}
+
+//TABLE HEADER
+::ng-deep .p-datatable .p-datatable-thead>tr>th {
+    background-color: #C9E5E6;
+}
+
+
+::ng-deep .p-datatable-header.ng-star-inserted {
+    background-color: white;
+    border-width: 0px;
+    border-color: white;
+}
+
+::ng-deep .p-datatable .p-datatable-tbody {
+    border-left: 2px solid teal;
+    border-right: 2px solid teal;
+    border-bottom: 2px solid teal;
+}
+
+::ng-deep .p-datatable .p-datatable-thead {
+    border-left: 2px solid teal;
+    border-right: 2px solid teal;
+    border-top: 2px solid teal;
+}
+
+//OVERALL MARGIN
+#project {
+    margin-left: 50px;
+    margin-right: 50px;
+    height: auto;
+}
+
+//SEARCH BAR
+.searchbar {
+    float: left;
+    width: 200px;
+}
+
+.searchbox {
+    width: 350px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.searchbox:hover {
+    cursor: text;
+}
+
+.showInActive {
+    width: fit-content;
+    margin-top: 5px;
+}
+
+.inActiveLabel {
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+.p-input-icon-left>i,
+.p-input-icon-right>i {
+    position: absolute;
+    top: 36%;
+    margin-top: -0.8rem;
+    padding-left: 8px;
+}
+
+//trial grid
+::ng-deep .p-datatable-resizable .p-datatable-thead>tr>th {
+    padding-block: unset;
+}
+
+::ng-deep .p-datatable-resizable .p-datatable-tbody>tr>td {
+    padding-block: unset;
+}
+
+::ng-deep.p-datatable table {
+    width: max-content;
+}
+
+//PAGINATION
+::ng-deep .p-paginator .p-paginator-current {
+    background-color: #ffffff;
+    border: 0px;
+    color: black;
+    min-width: 2.357rem;
+    height: 2.357rem;
+}
+
+::ng-deep .p-paginator-rpp-options {
+    width: 56.6px;
+    height: 36.6px !important;
+}
+
+::ng-deep .p-paginator-rpp-options>.p-element.p-dropdown-label.p-inputtext {
+    padding-top: 5px;
+    padding-left: 8px;
+}
+
+::ng-deep .p-paginator-rpp-options>.p-dropdown-trigger {
+    width: 19px;
+    height: 24px;
+    padding-top: 13px;
+    padding-right: 12px;
+}
+
+::ng-deep .p-paginator-pages>.p-paginator-page.p-paginator-element.p-link.p-highlight {
+    min-width: 2.4rem;
+    height: 2.4rem;
+}
+
+::ng-deep span.p-element.p-dropdown-label.p-inputtext {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+}
+
+.addFormArray {
+    width: 100%;
+}
+
+.field-checkbox {
+    display: flex;
+    flex-direction: column;
+}
+
+.radiobtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 10px;
+}
+
+
+.dropdown {
+    width: 100%;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.deleteBtn {
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding-left: 0% !important;
+}
+
+.deleteBtn:disabled {
+    cursor: not-allowed;
+    background: none;
+    border: none;
+}
+
+.cancelBtn,
+.updateBtn {
+    width: fit-content;
+}
+
+.editBtn,
+.addChild {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.mainDiv {
+    height: 50vh;
+}
+
+.radioLabel {
+    margin-left: 0px !important;
+    width: fit-content;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.radiobtns {
+    margin-left: 5px;
+    width: fit-content;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.addCard {
+    width: 50%;
+    max-width: 800px;
+    border-color: teal;
+}
+
+.categoryNameInput,
+.weightageInput {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.categoryNameInput.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+.weightageInput.ng-pristine.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+.weightageInput.ng-dirty.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+::ng-deep p-dropdown.ng-invalid.ng-touched>div.p-dropdown.p-component {
+    border: 1px solid red;
+}
+
+::ng-deep span.p-dropdown-label.p-inputtext.p-placeholder {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+::ng-deep span#pr_id_5_label.p-dropdown-label.p-inputtext {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+::ng-deep .p-datatable table {
+    border-collapse: collapse;
+    min-width: 100%;
+    table-layout: fixed;
+    margin-left: 0px !important;
+}
+
+.searchDiv {
+    display: flex;
+    justify-content: space-between;
+    height: 45px;
+}
+
+.practiceHeader {
+    margin-top: 10px;
+    height: 35px;
+}
+
+.card {
+    margin: auto;
+    margin-top: 20px !important;
+}
+
+.addCardHeader {
+    background-color: #C9E5E6;
+    color: black;
+    font-weight: 500;
+    font-family: Arial;
+    font-size: 18px;
+}
+
+.editMainDiv {
+    height: 50vh;
+}
+
+.editCard {
+    width: 50%;
+    max-width: 800px;
+    border-color: teal;
+}
+
+.editCardHeader {
+    background-color: #C9E5E6;
+    color: black;
+    font-weight: 600;
+}
+
+.radioLabel {
+    margin-left: 5px;
+}
+
+.category {
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+.card {
+    margin: auto;
+    margin-top: 50px;
+}
+
+.form-label {
+    font-weight: 400;
+    color: black;
+    font-family: Arial;
+    font-size: 14px;
+}
+
+.e-checkBox-field {
+    margin-top: 1%;
+}
+
+.checkBox-field {
+    margin-top: 3.5%;
+}
+
+.yellow {
+    width: auto;
+    background-color: #FFF2E2;
+    color: #CC8925
+}
+
+.green {
+    width: auto;
+    background-color: #E4F8F0;
+    color: #1EA97C;
+}
+
+.red {
+    width: auto;
+    background-color: #FFE7E6;
+    color: #FF5757;
+}
+
+.red .icon::before {
+    font-family: 'primeicons';
+    content: "\e90c";
+    font-size: larger;
+}
+
+.yellow .icon::before {
+    font-family: 'primeicons';
+    content: "\e922";
+    font-size: larger;
+}
+
+.green .icon::before {
+    font-family: 'primeicons';
+    content: "\e909";
+    font-size: larger;
+}
+
+.icon::before {
+    display: inline-block;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.totalWeightage {
+    margin-top: 2.5%;
+    width: fit-content;
+    font-weight: 400;
+    color: black;
+    font-family: Arial;
+    font-size: 14px;
+}
+
+.btn-add {
+    margin-top: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color: #D62598;
+    color: white;
+    border-radius: 0px;
+    border-width: 1px;
+    font-size: 14px;
+    padding: 5px 10px 5px 10px;
+    border-color: #D62598;
+}
+
+.btn-add:hover {
+    background-color: #FFCDCD;
+    color: #D62598;
+    border-radius: 0px;
+    border-width: 1px;
+    font-size: 14px;
+    padding: 5px 10px 5px 10px;
+    border-color: #D62598;
+}
+
+.btn-save {
+    width: fit-content;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.btn-cancel,
+.btn-save {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color: #009CA6;
+    color: white;
+    border-radius: 0px;
+    border-width: 1px;
+    font-size: 14px;
+    padding: 5px 10px 5px 10px
+}
+
+.btn-save:hover {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color: #00818A;
+    color: white;
+    border-radius: 0px;
+    border-width: 1px;
+    font-size: 14px;
+    padding: 5px 10px 5px 10px
+}
+
+.btn-reset {
+    margin-top: 32px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 0px;
+    border-width: 1px;
+    font-size: 14px;
+    padding: 5px 10px 5px 10px;
+    color: white
+}
+
+.btn-reset:hover {
+    margin-top: 32px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 0px;
+    border-width: 1px;
+    font-size: 14px;
+    padding: 5px 10px 5px 10px;
+    background-color: lightgrey;
+    color: black
+}
+
+.btn-delete {
+    margin-top: 32px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 0px;
+    border-width: 1px;
+    font-size: 14px;
+    padding: 5px 10px 5px 10px;
+}
+
+.btn-delete:hover {
+    margin-top: 32px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 0px;
+    border-width: 1px;
+    font-size: 14px;
+    padding: 5px 10px 5px 10px;
+    background-color: lightcoral;
+}
+
+
+
+.saveDiv,
+.resetDiv,
+.addDiv {
+    width: fit-content;
+}
+
+.categoryGrid {
+    font-weight: normal;
+}
+
+::ng-deep .p-datatable .p-datatable-tbody>tr>td {
+    text-align: left;
+    border: 1px solid #dee2e6;
+    border-width: 0 0 1px 0;
+    padding: 0rem 1rem;
+}
+
+::ng-deep .p-datatable .p-datatable-thead>tr>th {
+    text-align: left;
+    padding: 0rem 1rem;
+    border: 1px solid #dee2e6;
+    border-width: 0 0 1px 0;
+    font-weight: 700;
+    color: #343a40;
+    background: #c9e5e6;
+    transition: box-shadow 0.2s;
+}
+
+
+::ng-deep .warning-button {
+    border-color: #C00000 !important;
+    color: white !important;
+    background-color: #C00000 !important;
+    cursor: pointer !important;
+    width: fit-content !important;
+}
+
+::ng-deep .warning-button:hover {
+    border-color: #C00000 !important;
+    color: #C00000 !important;
+    background-color: white !important;
+    cursor: pointer;
+}
+
+::ng-deep .add-button {
+    border-color: #7B57CB !important;
+    color: white !important;
+    background-color: #7B57CB !important;
+    width: fit-content !important;
+}
+
+::ng-deep .add-button:hover {
+    border-color: #7B57CB !important;
+    color: #7B57CB !important;
+    background-color: white !important;
+}
+
+::ng-deep .save-button {
+    border-color: #00818A !important;
+    background-color: #00818A !important;
+    color: white !important;
+}
+
+::ng-deep .save-button:hover {
+    border-color: #006870 !important;
+    background-color: #006870 !important;
+    color: white !important;
+}
+
+::ng-deep .save-button:disabled {
+    border-color: #EEEEEE !important;
+    background-color: #EEEEEE !important;
+    color: #9C9C9C !important;
+}
+
+.resetDiv,
+.deleteDiv {
+    margin-top: 32px;
+}
+
+.addDiv {
+    margin-top: 10px;
+}

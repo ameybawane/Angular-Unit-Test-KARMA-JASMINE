@@ -1,0 +1,479 @@
+//SPACE BETWEEN FIELDS
+.space {
+    padding-bottom: 80px;
+}
+
+//TITLE
+.mainheading {
+    color: #00818A;
+    font-family: 'Noto Sans';
+    font-size: 22px;
+    margin-left: 600px;
+}
+
+h5 {
+    color: #00818A;
+    font-family: 'Noto Sans';
+    font-size: 22px;
+    padding-left: 350px;
+}
+
+.nameposition {
+    float: right;
+}
+
+.boldtext {
+    font-weight: bold;
+}
+
+//TABLE HEADER
+::ng-deep .p-datatable .p-datatable-thead>tr>th {
+    background-color: #C9E5E6;
+}
+
+
+::ng-deep .p-datatable-header.ng-star-inserted {
+    background-color: white;
+    border-width: 0px;
+    border-color: white;
+}
+
+::ng-deep .p-datatable .p-datatable-tbody {
+    border-left: 2px solid teal;
+    border-right: 2px solid teal;
+    border-bottom: 2px solid teal;
+}
+
+::ng-deep .p-datatable .p-datatable-thead {
+    border-left: 2px solid teal;
+    border-right: 2px solid teal;
+    border-top: 2px solid teal;
+}
+
+//trial grid
+::ng-deep .p-datatable-resizable .p-datatable-thead>tr>th {
+    padding-block: unset;
+}
+
+::ng-deep .p-datatable-resizable .p-datatable-tbody>tr>td {
+    padding-block: unset;
+}
+
+::ng-deep.p-datatable table {
+    width: max-content;
+}
+
+//OVERALL MARGIN
+#templateGrid {
+    width: 800px; /* fixed width */
+    table-layout: fixed;
+    margin-left: 67px;
+    margin-right: 50px;
+    height: auto;
+}
+
+#templateGrid td {
+    white-space: normal; /* allow text to wrap */
+    overflow: hidden; /* hide any overflowing text */
+    text-overflow: ellipsis; /* show ellipsis for any text that doesn't fit */
+  }
+
+.searchDiv {
+    display: flex;
+    justify-content: space-between;
+    height: 45px;
+    margin-left: 0px;
+    margin-right: -45px;
+    padding-left: 55px;
+    padding-right: 21px;
+    margin-top: 10px;
+}
+
+.subLabels {
+    margin-left: 65px;
+}
+
+.practiceHeader {
+    margin-top: 10px;
+}
+
+.radioLabel {
+    margin-left: 5px !important;
+    width: fit-content;
+    font-weight: 500;
+    font-size: 18px;
+    font-family: Arial;
+}
+
+.mainDiv {
+    height: 50vh;
+}
+
+.expectationsInput.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+.weightageInput.ng-pristine.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+.weightageInput.ng-dirty.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+.expectationsInput,
+.weightageInput {
+    padding-top: 4px;
+    padding-top: 4px;
+}
+
+//SEARCH BAR
+.searchbar {
+    float: left;
+    width: 200px;
+}
+
+.searchbox {
+    width: 350px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.searchbox:hover {
+    cursor: text;
+}
+
+.showInActive {
+    width: fit-content;
+    margin-top: 5px;
+}
+
+.inActiveLabel {
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+.p-input-icon-left>i,
+.p-input-icon-right>i {
+    position: absolute;
+    top: 36%;
+    margin-top: -0.8rem;
+    padding-left: 8px;
+}
+
+//PAGINATION
+::ng-deep .p-paginator .p-paginator-current {
+    background-color: #ffffff;
+    border: 0px;
+    color: black;
+    min-width: 2.357rem;
+    height: 2.357rem;
+}
+
+::ng-deep .p-paginator-rpp-options {
+    width: 56.6px;
+    height: 36.6px !important;
+}
+
+::ng-deep .p-paginator-rpp-options>.p-element.p-dropdown-label.p-inputtext {
+    padding-top: 5px;
+    padding-left: 8px;
+}
+
+::ng-deep .p-paginator-rpp-options>.p-dropdown-trigger {
+    width: 19px;
+    height: 24px;
+    padding-top: 13px;
+    padding-right: 12px;
+}
+
+::ng-deep .p-paginator-pages>.p-paginator-page.p-paginator-element.p-link.p-highlight {
+    min-width: 2.4rem;
+    height: 2.4rem;
+}
+
+.addFormArray {
+    width: 100%;
+}
+
+.field-checkbox {
+    display: flex;
+    flex-direction: column;
+}
+
+.radiobtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.editBtns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.cancelBtn,
+.updateBtn {
+    width: fit-content;
+}
+
+i {
+    cursor: pointer;
+}
+
+.mainDiv {
+    height: 50vh;
+}
+
+.addCard {
+    width: 50%;
+    max-width: 800px;
+    border-color: teal;
+}
+
+.addCardHeader {
+    background-color: #C9E5E6;
+    color: black;
+    font-weight: 500;
+    font-family: Arial;
+    font-size: 18px;
+}
+
+.editMainDiv {
+    height: 50vh;
+}
+
+.editCard {
+    width: 50%;
+    max-width: 800px;
+    border-color: teal;
+}
+
+.editCardHeader {
+    background-color: #C9E5E6;
+    color: black;
+    font-weight: 600;
+}
+
+.radioLabel {
+    margin-left: 5px;
+}
+
+.category {
+    padding-left: 0;
+    padding-right: 0%;
+}
+
+.card {
+    margin: auto;
+    margin-top: 20px !important;
+}
+
+.form-label {
+    font-weight: 400;
+    color: black;
+    font-family: Arial;
+    font-size: 14px;
+}
+
+.e-checkBox-field {
+    margin-top: 1%;
+}
+
+.checkBox-field {
+    margin-top: 3.5%;
+}
+
+.yellow {
+    width: auto;
+    background-color: #FFF2E2;
+    color: #CC8925
+}
+
+.green {
+    width: auto;
+    background-color: #E4F8F0;
+    color: #1EA97C;
+}
+
+.red {
+    width: auto;
+    background-color: #FFE7E6;
+    color: #FF5757;
+}
+
+.red .icon::before {
+    font-family: 'primeicons';
+    content: "\e90c";
+    font-size: larger;
+}
+
+.yellow .icon::before {
+    font-family: 'primeicons';
+    content: "\e922";
+    font-size: larger;
+}
+
+.green .icon::before {
+    font-family: 'primeicons';
+    content: "\e909";
+    font-size: larger;
+}
+
+.icon::before {
+    display: inline-block;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.totalWeightage {
+    margin-top: 2.5%;
+    font-weight: 500;
+    width: fit-content;
+}
+
+.btn-add {
+    margin-top: 10px;
+    background-color: #D62598;
+    color: white;
+    border-radius: 0px;
+    border-width: 1px;
+    font-size: 14px;
+    padding: 5px 10px 5px 10px;
+    border-color: #D62598;
+}
+
+.btn-add:hover {
+    background-color: #FFCDCD;
+    color:#D62598 ;
+    border-radius: 0px;
+    border-width: 1px;
+    font-size: 14px;
+    padding: 5px 10px 5px 10px;
+    border-color: #D62598;
+}
+
+.btn-save,
+.btn-add,
+.btn-cancel,
+.btn-eSave {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+}
+
+
+.btn-reset{
+    width: fit-content;
+    margin-top: 32px;
+    border-radius: 0px;
+    border-width: 1px;
+    font-size: 14px;
+    padding: 5px 10px 5px 10px;
+    color:white
+}
+
+.btn-reset:hover{
+    width: fit-content;
+    margin-top: 32px;
+    border-radius: 0px;
+    border-width: 1px;
+    font-size: 14px;
+    padding: 5px 10px 5px 10px;
+    background-color: lightgrey;
+    color:black
+}
+
+.btn-delete {
+    width: fit-content;
+    margin-top: 32px;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+    border-radius: 0px;
+    border-width: 1px;
+    font-size: 14px;
+    padding: 5px 10px 5px 10px;
+}
+
+.btn-delete:hover {
+    width: fit-content;
+    margin-top: 32px;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+    border-radius: 0px;
+    border-width: 1px;
+    font-size: 14px;
+    padding: 5px 10px 5px 10px;
+    background-color: lightcoral;
+}
+
+
+.btn-save {
+    width: fit-content;
+    background-color: #009CA6;
+    color: white;
+    border-radius: 0px;
+    border-width: 1px;
+    font-size: 14px;
+    padding: 5px 10px 5px 10px
+}
+
+.btn-save:hover {
+    width: fit-content;
+    background-color: #00818A;
+    color: white;
+    border-radius: 0px;
+    border-width: 1px;
+    font-size: 14px;
+    padding: 5px 10px 5px 10px
+}
+
+.practiceNameDiv {
+    height: 27px;
+}
+
+.saveDiv,
+.resetDiv,
+.addDiv,
+.backDiv {
+    width: fit-content;
+}
+
+.backDiv {
+    padding: 0;
+}
+
+.back {
+    margin-left: -50px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.back:hover {
+    margin-left: -50px;
+    background-color: white;
+    border: none;
+}
+
+::ng-deep .p-button-icon {
+    font-size: 30px;
+    color: black;
+    background-color: white;
+}
+
+.gridDeleteBtn {
+    border: none;
+    background: none;
+}
+
+.question {
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+::ng-deep .p-datatable-resizable>.p-datatable-wrapper {
+    overflow-x: unset !important;
+}
